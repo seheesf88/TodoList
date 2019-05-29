@@ -15,7 +15,7 @@ class TodoList {
     $startBtn.hide()
     // $('.listDiv').visible();
     $('.listInput').append(`<input id="input" placeholder="What needs to be done?">`)
-    $('.submitBtn').append(`Add item`);
+    $('.submitBtn').append(`<img src="./css/add.png">`);
 
     // $submitBtn.on('click', () => {
     //   const $item = $('#input').val();
@@ -25,14 +25,15 @@ class TodoList {
 
     $submitBtn.on('click', () => {
       const $item = $('#input').val();
-      const $itemSpan = $("<span></span>");
+      const $itemSpan = $("<span class='itemSpan'></span>");
       $itemSpan.append($item);
       const $ul = $("#list");
       const $li = $("<li></li>");
-      const $removeBtn = $("<button>X</button>")
+      const $removeBtn = $("<button class='removeBtn'></button>")
       // const $completedBtn = $("<span><input type='checkbox'></span>");
-      const $completedBtn = $("<span>DONE</span>")
-      const $incompletedBtn = $("<span>CANCEL</span>")
+      const $completedBtn = $("<span style='margin-right: 40px'><img src='./css/unchecked.png'></span>")
+      const $checkedBox = $("<span style='margin-right: 60px'><img src='./css/done.png'></span>")
+      const $incompletedBtn = $("<span><img src='./css/cancel.png'></span>")
 
       if($('#input').val() === ''){
         alert('please enter sth')
@@ -40,6 +41,8 @@ class TodoList {
         // $li.append($item);
         $li.append($itemSpan);
         $li.prepend($completedBtn)
+        $li.prepend($checkedBox)
+        $checkedBox.hide();
 
         $li.append($incompletedBtn)
         $incompletedBtn.hide();
@@ -55,14 +58,17 @@ class TodoList {
 
       $completedBtn.on('click', (e) => {
         console.log('done');
-        $itemSpan.attr( 'style', 'text-decoration: line-through');
+        // $itemSpan.attr( 'style', 'text-decoration: line-through');
+        $li.attr( 'style', 'text-decoration: line-through');
         $incompletedBtn.show();
         $completedBtn.hide();
+        $checkedBox.show();
       })
 
       $incompletedBtn.on('click', (e) => {
         console.log('cancel');
-        $itemSpan.attr('style', 'text-decoration: none');
+        $li.attr('style', 'text-decoration: none');
+        $checkedBox.hide();
         $completedBtn.show();
         $incompletedBtn.hide();
       })
