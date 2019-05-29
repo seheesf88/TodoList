@@ -14,7 +14,7 @@ class TodoList {
   start(){
     $startBtn.hide()
     // $('.listDiv').visible();
-    $('.listInput').append(`<input id="input" placeholder="What needs to be done?">`)
+    $('.listInput').append(`<input id="input" placeholder="What needs to be done?" maxlength="20">`)
     $('.submitBtn').append(`<img src="./css/add.png">`);
 
     // $submitBtn.on('click', () => {
