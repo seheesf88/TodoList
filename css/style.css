@@ -22,6 +22,11 @@ header {
 footer {
   background-color: pink;
   height: 40px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .startBtn {
@@ -45,6 +50,7 @@ footer {
 #title {
   font-size: 60px;
 }
+
 /* input style */
 
 .form {
@@ -59,7 +65,7 @@ input {
   height: 50px;
   width: 300px;
   padding: inherit;
-
+  border: 1px solid;
 }
 
 /* list style */
