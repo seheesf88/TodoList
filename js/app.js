@@ -12,11 +12,12 @@ class TodoList {
   }
 
   start(){
-    $startBtn.hide()
+    $startBtn.hide();
+    $('#instructions').hide();
     // $('.listDiv').visible();
     $('.listInput').append(`<input id="input" placeholder="What needs to be done?" maxlength="20">`)
     $('.submitBtn').append(`<img src="./css/add.png">`);
-
+    // $('.instruction').append()
     // $submitBtn.on('click', () => {
     //   const $item = $('#input').val();
     //   // console.log($item);
@@ -58,7 +59,7 @@ class TodoList {
 
       $completedBtn.on('click', (e) => {
         console.log('done');
-        // $itemSpan.attr( 'style', 'text-decoration: line-through');
+        // $itemSpan.attr( 'style', 'color: red');
         $li.attr( 'style', 'text-decoration: line-through');
         $incompletedBtn.show();
         $completedBtn.hide();
@@ -71,6 +72,11 @@ class TodoList {
         $checkedBox.hide();
         $completedBtn.show();
         $incompletedBtn.hide();
+      })
+
+      $itemSpan.on('click', (e) => {
+        console.log('>>>>>', e);
+        $itemSpan.toggleClass('urgent');
       })
     })
   }

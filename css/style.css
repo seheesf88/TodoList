@@ -29,7 +29,7 @@ header {
 
 footer {
   background-color: black;
-  height: 70px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,6 +111,9 @@ a, #name {
   color: white;
 }
 
+.links {
+  margin-bottom: 20px;
+}
 
 
 .itemSpan {
@@ -124,4 +127,28 @@ a, #name {
   width: 60px;
   border: none;
   margin-left: 20px;
+}
+
+.urgent {
+  color: red;
+}
+
+#mark {
+  color: red;
+}
+
+.instruction {
+  height: 15px;
+  width: 15px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+#instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  margin-left: auto;
 }
